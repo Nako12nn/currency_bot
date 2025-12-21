@@ -1,0 +1,35 @@
+services:
+  bot:
+    build: .
+    env_file:
+      - .env
+    container_name: currency_bot
+    restart: always
+    depends_on:
+      - redis
+      - db
+
+    volumes:
+      - .:/app
+
+  redis:
+    image: redis:7
+    container_name: redis
+    restart: always
+    ports:
+      - "6379:6379"
+
+  db: 
+    image: postgres:16
+    container_name: postgres
+    restart: always
+    environment:
+      POSTGRES_DB: currency_db
+      POSTGRES_USER: currency_user
+      POSTGRES_PASSWORD: currency_pass
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+volumes:
+  postgres_data:
