@@ -1,1 +1,9 @@
-Aiogram 
+aiogram
+python-dotenv
+pydantic-settings
+httpx
+sqlalchemy>=2.0
+asyncpg
+alembic
+greenlet
+redis>=5.0
