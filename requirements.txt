@@ -7,3 +7,4 @@ asyncpg
 alembic
 greenlet
 redis>=5.0
+pytest>=7.0
