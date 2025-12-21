@@ -5,7 +5,8 @@ on:
     branches: [ main ]
   pull_request:
     branches: [ main ]
-jobs: 
+
+jobs:
   test:
     runs-on: ubuntu-latest
 
@@ -24,13 +25,13 @@ jobs:
           --health-timeout 5s
           --health-retries 5
 
-      redis: 
+      redis:
         image: redis:7
-        ports: 
+        ports:
           - 6379:6379
 
     steps:
-      - name Checkout code
+      - name: Checkout code
         uses: actions/checkout@v3
 
       - name: Set up Python
@@ -46,3 +47,4 @@ jobs:
       - name: Run tests
         run: |
           pytest
+
