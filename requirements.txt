@@ -7,15 +7,3 @@ asyncpg
 alembic
 greenlet
 redis>=5.0
-
-
-
-
-
-
-
-
-
-
-
->>>>>>> da8e9c7 (Add Docker, PostgreSQL, Redis and bot logic)
