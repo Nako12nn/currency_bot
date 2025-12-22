@@ -1,4 +1,5 @@
 import pytest
+from types import SimpleNamespace
 from app.services import redis_cache
 
 @pytest.mark.asyncio
@@ -11,8 +12,16 @@ async def test_set_get_cache(monkeypatch):
     async def fake_get(key):
         return fakestorage.get(key)
 
-    client = redis_cache.get_redis()
+    fake_settings = SimpleNamespace(
+        REDIS_URL="redis://fake:6379"
+    )
 
+    monkeypatch.setattr(
+        "app.services.redis_cache.get_settings",
+        lambda: fake_settings
+    )
+
+    client = redis_cache.get_redis()
     monkeypatch.setattr(client, "set", fake_set)
     monkeypatch.setattr(client, "get", fake_get)
 
