@@ -11,8 +11,9 @@ async def create_currency(code: str, name: str):
     
 async def get_all_currencies():
     async with SessionLocal() as session:
-        stmt = select(Currency)
-        result = session.execute(stmt)
-        currencies = result.all()
-        return [row[0] for row in currencies]
+        result = await session.execute(
+            select(Currency)
+        )
+        currencies = result.scalars().all()
+        return currencies
     
