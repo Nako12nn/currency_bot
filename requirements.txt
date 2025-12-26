@@ -10,3 +10,5 @@ redis>=5.0
 pytest>=7.0
 pytest
 pytest-asyncio
+fastapi 
+uvicorn
