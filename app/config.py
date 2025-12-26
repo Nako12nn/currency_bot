@@ -6,6 +6,9 @@ class Settings(BaseSettings):
     TELEGRAM_TOKEN: str 
     REDIS_URL: str 
     DEBUG: bool = False
+    SEKRET_KEY: str
+    ALGORITHM: str
+    ACCESS_TOKEN_EXPIRE_MINUTES: int
 
     model_config = SettingsConfigDict(
         env_file = ".env",
