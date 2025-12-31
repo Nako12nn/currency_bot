@@ -30,7 +30,7 @@ async def main():
     dp.message.register(rate_handler, Command(commands=["rate"]))
     dp.message.register(currencies_handler, Command(commands=["currencies"]))
 
-    print("Бот запускається...")
+    print("The bot is starting up...")
 
     await on_startup()
     await init_db()

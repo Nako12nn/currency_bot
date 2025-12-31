@@ -3,11 +3,11 @@ from app.utils.currencies import CURRENCIES_NAMES
 
 async def start_handler(message):
     text = (
-        "👋 Привіт! Я бот для відстеження курсів валют 💵\n\n"
-        "📌 Як користуватись:\n"
+        "👋 Hi! I am a bot for tracking currency exchange rates 💵\n\n"
+        "📌 How to use:\n"
         "/rate USD\n"
         "/rate EUR UAH\n"
-        "💵 Доступні валюти:\n"
+        "💵  Available currencies:\n"
     )
     
     for code, name in CURRENCIES_NAMES.items():

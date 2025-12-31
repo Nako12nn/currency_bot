@@ -5,7 +5,7 @@ async def rate_handler(message):
     parts = text.split()
 
     if len(parts) == 1:
-        await message.answer("Вкажіть валюту /rate USD")
+        await message.answer("Please select your currency /rate USD")
         return
     
     base = parts[1].upper()

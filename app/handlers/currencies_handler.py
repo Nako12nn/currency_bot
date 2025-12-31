@@ -4,14 +4,14 @@ async def currencies_handler(message):
     currencies = await get_all_currencies()
 
     if not currencies:
-        await message.answer("Список валют порожній")
+        await message.answer("Currency list is empty")
         return message
     
-    text = "Доступні валюти: "
+    text = "Available cyrrencies: "
 
     for currency in currency:
         text += f"{currency.code} - {currency.name}\n"
 
-    text += "\nВикористання:\n/rate USD\n/rate EUR UAH"
+    text += "\nHow to use:\n/rate USD\n/rate EUR UAH"
 
     await message.answer(text)
